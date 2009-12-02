@@ -3,7 +3,6 @@ author: cconnolly@gilt.com
 categories: blog
 gravatar_hash: 36f0940444ab46d11bae4ce320611ee6
 layout: post
-title: First post
 title: Why code.gilt?
 ---
 

@@ -1,0 +1,86 @@
+---
+author: kdavis@gilt.com
+categories: blog
+gravatar_hash: 1c0ec197cf8845878957200e9e2b1755
+layout: post
+title: Cross Domain Cookies
+tags: [milk, cookies]
+---
+At Gilt, we have several domains, including gilt.com, giltfuse.com, and giltman.com
+Keeping cookies synchronized between these different domains has been a bit of a pain point for us for a while now.
+One rather interesting approach that we tried was having each domain load an iframe from one common domain.
+e.g. giltman.com and giltfuse.com include an iframe from gilt.com (and so does gilt.com, for simplicity)
+<notextile><pre>
+                                 +------------+
+                                 |            |
+  +--------+                     |  GILT.com  |
+  |        |                     |            |
+  | Shared |==========+============>+--+      |
+  | Domain |          |          |  |  |      |
+  |        |          |          |  +--+      |
+  +--------+          |          |            |
+                      |          +------------+
+                      |
+                      |       +------------+
+                      |       |            |
+                      |       | GILT FUSE  |
+                      |       |            |
+                      \=========>+--+      |
+                              |  |  |      |
+                              |  +--+      |
+                              |            |
+                              +------------+
+</pre></notextile>
+Both the included (and hidden) iframe, and the parent page, include javascript that allows 2 way communication.
+The parent frame sends a message to the iframe asking for a cookie, and the iframe responds with the value of the cookie.
+<notextile><pre>
+  +PARENT---------------------+
+  |                           |
+  |   {JS}<---------------\   |
+  |     \                 |   |
+  |      \-------------\  |   |
+  |                    |  |   |
+  |  +IFRAME--------+  |  |   |
+  |  |              |  |  |   |
+  |  | readCookie  &lt;O--/  |   |
+  |  |              |     |   |
+  |  | sendMsg      O&gt;----/   |
+  |  |              |         |
+  |  +--------------+         |
+  |                           |
+  +---------------------------+
+</pre></notextile>
+In most browsers, this communication takes place using window.postMessage to send messages, and event listeners to receive messages.  Everything is (almost) synchronous, and the world is a happy place.
+<br/>
+In Internet Exploder 6 & 7, however, this approach doesn't work, so we have to use a completely different approach.
+Simply put, we send messages by modifying the url hash in each frame.  http://www.gilt.com/blah#ts=1252342349356&message=%7Bfoo%3A'bar'%7D
+The parent window can modify (but not read) the url of the iframe, and the iframe can modify (but not read) the url of the parent.  Both the parent and the iframe poll their own url hashes several times a second looking for changes.
+<br/>
+You may have noticed one itty bitty little problem with this approach:  what if you need to send more than 1 message at a time?  or, what if you need to send a really really really long message (that's longer than the max length of a url in IE)?
+To handle that situation, we have a send message queue on both ends.  Each time a message is received, the receiver has to send an ack before the next message is sent.  This ack can either be an actual message or just a noop.
+<br/>
+<notextile><pre>
+                       /->{QueueWorker}
+                      /         |
+sendMessage-->Queue<-/          |       {Listener}-->{MessageHandler}
+                                |           ^
+------------------------------- | --------- | -----------------------
+                                v           |
+         {MessageHandler}<--{Listener}      |
+                |                           |
+                v                           |
+              "ack" if Queue.empty?         |
+                |                           |
+                v                           |
+sendMessage-->Queue<-\                      |
+                      \                     |
+                       \------------->{QueueWorker}
+</pre></notextile>
+<br/>
+To handle the really long messages, we can chop too long messages up, and send them along with something that tells the receiver that it's part of a longer message and not to do anything with it until it has the entire message.
+What we wound up doing to handle all these different use-cases, was to have a common json data format for all messages:
+{
+  action: "somecommand",
+  data: "string or json hash, specific to the command"
+}
+For example, { action: "cookie", data: { name: "foo", value: "bar" } }
