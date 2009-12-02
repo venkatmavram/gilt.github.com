@@ -15,6 +15,7 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
 input,textarea,select{*font-size:100%;}
 legend{color:#000;}
 /* End Reset */
+
 html {
   background-color: #212121;
   color: white;
@@ -37,15 +38,15 @@ div#wrapper, div#navbar {
   margin: 0 auto;
   width: 925px;
 }
-div.content {
+div.main_content {
   float: left;
-  padding: 10px;
   width: 592px;
 }
 div.sidebar {
   float: right;
   padding: 10px;
   width: 283px;
+  border-left: 1px solid #d9d9d9;
 }
 
 /* Clearfix */
@@ -67,3 +68,45 @@ html[xmlns] .clearfix {
   height: 1%;
 }
 /* End Clearfix */
+
+/* Post */
+img.author_avatar {
+  float: left;
+}
+div.author {
+  float: left;
+  margin-left: 10px;
+}
+div.author h1 {
+  font-size: 120%;
+  font-weight: bold;
+}
+div.author h2 {
+  font-style: italic;
+}
+div.author h3 {
+  font-size: 70%;
+}
+div.content {
+  clear: both;
+  float: left;
+  padding: 10px;
+  width: 905px;
+  border-bottom: 1px solid #d9d9d9;
+}
+div.tags {
+  float: right;
+  font-size: 70%;
+}
+div.footer {
+  float: left;
+}
+#disqus_thread {
+  float: left;
+  clear: left;
+}
+a.dsq-brlink {
+  float: left;
+  clear: left;
+}
+/* End Post */
