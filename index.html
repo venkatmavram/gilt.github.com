@@ -3,11 +3,11 @@ layout: default
 title: Gilt Code
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
+<div class="content">
+  <h3>Blog</h3>
   <ul class="posts">
     {% for blog_category in site.categories %}
-      {% if blog_category.first != "blog" %}
+      {% if blog_category.first == "blog" %}
         {% for post in blog_category.last %}
           {% if forloop.first %}
             <li id="first_post">
@@ -23,12 +23,12 @@ title: Gilt Code
 </div>
 
 <div class="sidebar">
-  <h1>Events</h1>
+  <h3>Events</h3>
   <ul class="Events">
     {% for event_category in site.categories %}
-      {% if event_category.first != "event" %}
+      {% if event_category.first == "event" %}
         {% for event in event_category.last %}
-          <li><span>{{ event.date | date_to_string }}</span> &raquo; <a href="{{ event.url }}">{{ event.title }}</a></li>
+          <li><span>{{ event.date | date_to_string }}</span><br /> <a href="{{ event.url }}">{{ event.title }}</a></li>
         {% endfor %}
       {% endif %}
     {% endfor %}

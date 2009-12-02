@@ -1,0 +1,17 @@
+---
+author: cconnolly@gilt.com
+categories: event
+gravatar_hash: 36f0940444ab46d11bae4ce320611ee6
+layout: post
+title: Gilt Experts Talk featuring Chris Wanstrath and Leah Culver
+---
+
+h1. {{ page.title }}
+
+<img src="http://www.gravatar.com/avatar/{{ page.gravatar_hash }}?s=30" />
+
+span(author). cconnolly@gilt.com
+
+p(meta). 02 Dec 2009
+
+This is the content of the post

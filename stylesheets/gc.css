@@ -19,20 +19,51 @@ html {
   background-color: #212121;
   color: white;
 }
-div.title a {
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+div#header {
+  background-color: #212121;
+  padding: 2px 0 5px;
+}
+div#navbar a {
   background: url(/images/logo.png) no-repeat;
   display: block;
   height: 55px;
   text-indent: -9999px;
   width: 171px;
 }
-div.site {
+div#wrapper, div#navbar {
   margin: 0 auto;
   width: 925px;
 }
-div#home {
+div.content {
   float: left;
+  padding: 10px;
+  width: 592px;
 }
 div.sidebar {
   float: right;
+  padding: 10px;
+  width: 283px;
 }
+
+/* Clearfix */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+* html .clearfix {
+  height: 1%;
+}
+/* End Clearfix */

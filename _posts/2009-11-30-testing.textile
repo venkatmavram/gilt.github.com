@@ -1,8 +1,10 @@
 ---
 author: cconnolly@gilt.com
 categories: blog
-gravatar_hash: 1c0ec197cf8845878957200e9e2b1755
+gravatar_hash: 36f0940444ab46d11bae4ce320611ee6
 layout: post
 title: First post
+title: Why code.gilt?fasdf
 ---
+
 This is the content of the post
