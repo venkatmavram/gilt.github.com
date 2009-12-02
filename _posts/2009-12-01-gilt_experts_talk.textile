@@ -1,9 +1,9 @@
 ---
-author: kdavis@gilt.com
+author: cconnolly@gilt.com
 categories: event
 gravatar_hash: 36f0940444ab46d11bae4ce320611ee6
 layout: post
-title: First postDddd
+title: Gilt Experts Talk featuring Chris Wanstrath and Leah Culver
 ---
 
 h1. {{ page.title }}
@@ -12,6 +12,6 @@ h1. {{ page.title }}
 
 span(author). cconnolly@gilt.com
 
-p(meta). 01 Dec 2009
+p(meta). 02 Dec 2009
 
 This is the content of the post
