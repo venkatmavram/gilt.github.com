@@ -1,9 +1,14 @@
 ---
+author: cconnolly@gilt.com
+categories: blog
+gravatar_hash: 1c0ec197cf8845878957200e9e2b1755
 layout: post
-title: First post
+title: First post momsssdfsdasdf
 ---
 
 h1. {{ page.title }}
+
+<img src="http://www.gravatar.com/avatar/{{ page.gravatar_hash }}?s=20" />
 
 p(meta). 30 Nov 2009
 

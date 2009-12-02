@@ -6,8 +6,31 @@ title: Gilt Code
 <div id="home">
   <h1>Blog Posts</h1>
   <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% for blog_category in site.categories %}
+      {% if blog_category.first != "blog" %}
+        {% for post in blog_category.last %}
+          {% if forloop.first %}
+            <li id="first_post">
+              {{ post.content }}
+            </li>
+          {% else %}
+            <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="sidebar">
+  <h1>Events</h1>
+  <ul class="Events">
+    {% for event_category in site.categories %}
+      {% if event_category.first != "event" %}
+        {% for event in event_category.last %}
+          <li><span>{{ event.date | date_to_string }}</span> &raquo; <a href="{{ event.url }}">{{ event.title }}</a></li>
+        {% endfor %}
+      {% endif %}
     {% endfor %}
   </ul>
 </div>
