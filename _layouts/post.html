@@ -12,9 +12,10 @@ layout: default
     {{ content }}
   </div>
   <div class="tags">
-    {{ page.tags | array_to_sentence_string }}
+    tags: {{ page.tags | array_to_sentence_string }}
   </div>
   <div class="footer">
+    Related Posts:<br/>
     {% for post in site.related_posts %}
       {% if post.id != page.id %}
         <a href="{{ post.url }}">{{ post.title }}</a><br/>

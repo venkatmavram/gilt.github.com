@@ -40,6 +40,7 @@ div#wrapper, div#navbar {
 }
 div.main_content {
   float: left;
+  padding: 10px;
   width: 592px;
 }
 div.sidebar {
@@ -47,6 +48,15 @@ div.sidebar {
   padding: 10px;
   width: 283px;
   border-left: 1px solid #d9d9d9;
+}
+div.main_content h1, div.sidebar h1 {
+  font-size: 120%;
+  font-weight: bold;
+  border-bottom: 1px solid #444;
+}
+a, a:hover, a:active, a:visited {
+  color: #00ccff;
+  font-size: 90%;
 }
 
 /* Clearfix */
@@ -104,6 +114,7 @@ div.footer {
 #disqus_thread {
   float: left;
   clear: left;
+  margin-top: 20px;
 }
 a.dsq-brlink {
   float: left;
