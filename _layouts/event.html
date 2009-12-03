@@ -5,12 +5,8 @@ layout: default
   {% include author.textile %}
   <div class="content">
     {{ content }}
-    <div class="clearfix"></div>
     <a class="prev_post" href="{{ page.previous.url }}">&laquo; Previous</a>
     <a class="next_post" href="{{ page.next.url }}">Next &raquo;</a>
-  </div>
-  <div class="tags">
-    tags: {{ page.tags | array_to_sentence_string }}
   </div>
   <div class="footer">
     <br/>
@@ -21,4 +17,3 @@ layout: default
   <noscript><a href="http://disqus.com/forums/giltcode/?url=ref">View the discussion thread.</a></noscript>
   <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
-

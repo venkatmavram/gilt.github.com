@@ -22,16 +22,3 @@ title: Gilt Code
     {% endfor %}
   </ul>
 </div>
-
-<div class="sidebar">
-  <h3>Events:</h3>
-  <ul class="events">
-    {% for event_category in site.categories %}
-      {% if event_category.first == "event" %}
-        {% for event in event_category.last %}
-          <li><span>{{ event.date | date_to_string }}</span><br /> <a href="{{ event.url }}">{{ event.title }}</a></li>
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
-  </ul>
-</div>

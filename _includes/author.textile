@@ -1,0 +1,6 @@
+<img src="http://www.gravatar.com/avatar/{{ page.gravatar_hash }}?s=58" class="author_avatar" />
+<div class="author">
+  <h1>{{ page.title }}</h1>
+  <h2><a href="/bio/{{page.author}}.html">{{ page.author }}@gilt.com</a></h2>
+  <h3>{{ page.date | date_to_string }}</h3>
+</div>

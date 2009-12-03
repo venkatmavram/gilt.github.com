@@ -6,17 +6,18 @@ title: Gilt Code Wave
 <script type="text/javascript">
   $(function() {
     var wavePanel = new WavePanel('https://wave.google.com/wave/');
-    wavePanel.setUIConfig("#212121", "#d9d9d9", "Arial", "13px");
-    //wavePanel.setUIConfig("white", "black", "Arial", "13px");
+    //wavePanel.setUIConfig("#212121", "#d9d9d9", "Arial", "13px");
+    wavePanel.setUIConfig("white", "black", "Arial", "13px");
     wavePanel.loadWave("googlewave.com!w+jVOROCX-C");
     wavePanel.init($("#waveframe")[0]);
   });
 </script>
 <style type="text/css">
   div#waveframe {
-    width: 925px;
+    width: 600px;
     height: 600px;
     padding: 0;
+    float: left;
   }
 </style>
 <div id="waveframe"></div>

@@ -95,6 +95,12 @@ div.big_x {
   line-height: 600px;
   display: none;
 }
+a.prev_post {
+  float: left;
+}
+a.next_post {
+  float: right;
+}
 
 /* Clearfix */
 .clearfix:after {
@@ -139,6 +145,7 @@ div.content {
   float: left;
   padding: 10px;
   border-bottom: 1px solid #d9d9d9;
+  width: 100%;
 }
 div.tags {
   float: right;
