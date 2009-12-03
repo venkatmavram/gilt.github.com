@@ -1,5 +1,5 @@
 ---
-author: cconnolly@gilt.com
+author: cconnolly
 categories: event
 gravatar_hash: 36f0940444ab46d11bae4ce320611ee6
 layout: post

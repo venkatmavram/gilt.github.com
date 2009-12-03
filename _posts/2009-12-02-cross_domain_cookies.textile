@@ -1,5 +1,5 @@
 ---
-author: kdavis@gilt.com
+author: kdavis
 categories: blog
 gravatar_hash: 1c0ec197cf8845878957200e9e2b1755
 layout: post
