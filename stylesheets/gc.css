@@ -27,14 +27,25 @@ div#header {
   background-color: #212121;
   padding: 2px 0 5px;
 }
-div#navbar a {
+div#navbar a.logo {
   background: url(/images/logo.png) no-repeat;
   display: block;
+  float: left;
   height: 55px;
   text-indent: -9999px;
   width: 171px;
 }
+div#navbar a.wave {
+  background: url(/images/wave.png) no-repeat;
+  display: block;
+  float: left;
+  height: 55px;
+  text-indent: -9999px;
+  width: 52px;
+  margin-left: 30px;
+}
 div#wrapper, div#navbar {
+  clear: both;
   margin: 0 auto;
   width: 925px;
 }
