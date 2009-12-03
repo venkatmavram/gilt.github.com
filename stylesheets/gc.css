@@ -141,3 +141,15 @@ a.dsq-brlink {
   clear: left;
 }
 /* End Post */
+
+/* Bios */
+#developer_bios a {
+  display: block;
+  float: left;
+  width: 100px;
+  text-decoration: none;
+  margin: 40px;
+  cursor: pointer;
+  text-align: center;
+}
+/* End Bios */
