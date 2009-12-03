@@ -4,14 +4,13 @@ title: Gilt Code
 ---
 
 <div class="main_content">
-  <h1>Blog Posts:</h1>
   <ul class="posts">
     {% for blog_category in site.categories %}
       {% if blog_category.first == "blog" %}
         {% for post in blog_category.last %}
           {% if forloop.first %}
             <li id="first_post">
-              <a href="{{ post.url }}">{{ post.title }}</a>
+              <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
               {{ post.content | truncatewords: 50 }}
               <br/>
             </li>
@@ -25,8 +24,8 @@ title: Gilt Code
 </div>
 
 <div class="sidebar">
-  <h1>Events:</h1>
-  <ul class="Events">
+  <h3>Events:</h3>
+  <ul class="events">
     {% for event_category in site.categories %}
       {% if event_category.first == "event" %}
         {% for event in event_category.last %}

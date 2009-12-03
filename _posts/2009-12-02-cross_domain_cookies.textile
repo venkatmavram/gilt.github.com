@@ -6,10 +6,7 @@ layout: post
 title: Cross Domain Cookies
 tags: [milk, cookies]
 ---
-At Gilt, we have several domains, including gilt.com, giltfuse.com, and giltman.com
-Keeping cookies synchronized between these different domains has been a bit of a pain point for us for a while now.
-One rather interesting approach that we tried was having each domain load an iframe from one common domain.
-e.g. giltman.com and giltfuse.com include an iframe from gilt.com (and so does gilt.com, for simplicity)
+At Gilt, we have several domains, including gilt.com, giltfuse.com, and giltman.com. Keeping cookies synchronized between these different domains has been a bit of a pain point for us for a while now. One rather interesting approach that we tried was having each domain load an iframe from one common domain. e.g. giltman.com and giltfuse.com include an iframe from gilt.com (and so does gilt.com, for simplicity)
 <notextile><pre>
                                  +------------+
                                  |            |
@@ -31,8 +28,7 @@ e.g. giltman.com and giltfuse.com include an iframe from gilt.com (and so does g
                               |            |
                               +------------+
 </pre></notextile>
-Both the included (and hidden) iframe, and the parent page, include javascript that allows 2 way communication.
-The parent frame sends a message to the iframe asking for a cookie, and the iframe responds with the value of the cookie.
+Both the included (and hidden) iframe, and the parent page, include javascript that allows 2 way communication. The parent frame sends a message to the iframe asking for a cookie, and the iframe responds with the value of the cookie.<br /><br />
 <notextile><pre>
   +PARENT---------------------+
   |                           |
@@ -57,7 +53,7 @@ Simply put, we send messages by modifying the url hash in each frame.  http://ww
 The parent window can modify (but not read) the url of the iframe, and the iframe can modify (but not read) the url of the parent.  Both the parent and the iframe poll their own url hashes several times a second looking for changes.
 <br/>
 You may have noticed one itty bitty little problem with this approach:  what if you need to send more than 1 message at a time?  or, what if you need to send a really really really long message (that's longer than the max length of a url in IE)?
-To handle that situation, we have a send message queue on both ends.  Each time a message is received, the receiver has to send an ack before the next message is sent.  This ack can either be an actual message or just a noop.
+To handle that situation, we have a send message queue on both ends.  Each time a message is received, the receiver has to send an ack before the next message is sent. This hack can either be an actual message or just a noop.
 <br/>
 <notextile><pre>
                        /->{QueueWorker}

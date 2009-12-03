@@ -6,5 +6,10 @@ layout: post
 title: Reminder - Gilt Experts Talk Tonight!
 tags: [gilt experts]
 ---
-This is the content of the post
-Another line
+
+<img src="/images/wanstrath_culver.jpg" alt="Chris Wanstrath and Leah Culver" />
+
+7:00pm
+Helen Mills 
+137 West 26th Street 
+(between 6th and 7th Avenue)

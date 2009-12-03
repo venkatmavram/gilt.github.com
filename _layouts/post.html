@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-<div id="post">
+
+<div id="post" class="main_content">
   <img src="http://www.gravatar.com/avatar/{{ page.gravatar_hash }}?s=58" class="author_avatar" />
   <div class="author">
     <h1>{{ page.title }}</h1>
@@ -29,3 +30,15 @@ layout: default
   <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+<div class="sidebar">
+  <h1>Events:</h1>
+  <ul class="events">
+    {% for event_category in site.categories %}
+      {% if event_category.first == "event" %}
+        {% for event in event_category.last %}
+          <li><span>{{ event.date | date_to_string }}</span><br /> <a href="{{ event.url }}">{{ event.title }}</a></li>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

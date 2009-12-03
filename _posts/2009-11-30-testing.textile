@@ -6,4 +6,4 @@ layout: post
 title: Why code.gilt?
 ---
 
-This is the content of the post
+X
