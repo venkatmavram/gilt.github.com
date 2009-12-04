@@ -46,14 +46,20 @@ div#navbar a.logo {
   text-indent: -9999px;
   width: 171px;
 }
+div#navbar a.events, div#navbar a.gallery, div#navbar a.developers {
+  float: left;
+  color: #d9d9d9;
+  margin-right: 5px;
+  margin-top: 35px;
+}
 div#navbar a.wave {
   background: url(/images/wave.png) no-repeat;
-  display: block;
-  float: left;
+  display: none;
+  float: right;
   height: 55px;
   text-indent: -9999px;
   width: 52px;
-  margin-left: 680px;
+  margin-right: 20px;
 }
 div#navbar a:active {
   outline: none;
@@ -192,7 +198,7 @@ ul.events li span {
   float: left;
   width: 100px;
   text-decoration: none;
-  margin: 40px;
+  margin: 20px;
   cursor: pointer;
   text-align: center;
 }
@@ -205,3 +211,29 @@ ul.events li span {
   width: 370px;
 }
 /* End Bios */
+
+/* Photo Gallery */
+a.album_thumb {
+  width: 150px;
+  display: block;
+  float: left;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  text-decoration: none;
+}
+a.album_thumb img {
+  width: 150px;
+}
+#photo_gallery {
+  width: 600px;
+}
+#photo_gallery img {
+  float: left;
+  margin: 0 10px 10px 0;
+  max-width: 590px;
+}
+#album #photo_gallery img.thumbnail {
+  width: 90px;
+  cursor: pointer;
+}
+/* End Photo Gallery */

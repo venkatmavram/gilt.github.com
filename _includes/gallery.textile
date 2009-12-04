@@ -1,0 +1,15 @@
+<div id="photo_gallery">
+  <h2>Photo Gallery</h2>
+  {% for photo in page.photos %}
+    <img src="{% if photo contains '\/' %}{% else %}/gallery/images/{% endif %}{{ photo }}"/>
+  {% endfor %}
+</div>
+<script type="text/javascript">
+  $(function() {
+    $("#photo_gallery img").each(function() {
+      if ($(this).width() > 590) { // for browsers that don't support max-width css
+        $(this).width(590);
+      }
+    });
+  });
+</script>

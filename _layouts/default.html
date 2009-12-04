@@ -4,7 +4,7 @@
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <title>{{ page.title }}</title>
    <link href="/atom.xml" rel="alternate" title="Gilt Code" type="application/atom+xml" />
-   <link rel="shortcut icon" href="/images/favicon.ico" />
+   <link rel="shortcut icon" href="/favicon.ico" />
    <link rel="stylesheet" href="/stylesheets/gc.css" />
    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
    <script type="text/javascript">
@@ -81,7 +81,9 @@
     <div id="navbar">
       <a class="logo" href="/">Gilt Code</a>
       <a class="wave" href="/wave" alt="Wave" title="Wave">Wave</a>
-      
+      <a class="events" href="/events">Events</a>
+      <a class="gallery" href="/gallery">Pics</a>
+      <a class="developers" href="/developer">Devs</a>
     </div>
   </div>
   
@@ -96,16 +98,23 @@
 
 <script type="text/javascript">
 //<![CDATA[
-(function() {
-   var links = document.getElementsByTagName('a');
-   var query = '?';
-   for(var i = 0; i < links.length; i++) {
-   if(links[i].href.indexOf('#disqus_thread') >= 0) {
-      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-   }
-   }
-   document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/giltcode/get_num_replies.js' + query + '"></' + 'script>');
-})();
+$(function() {
+  var links = $('a');
+  var query = '?';
+  for(var i = 0; i < links.length; ++i) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+       query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+  }
+  $.getScript("http://disqus.com/forums/giltcode/get_num_replies.js" + query);
+  if ($("#disqus_thread").length) {
+    document.write = function(arg) {
+      // replace document.write with dom append.  document.write after document.close == new document == bad
+      $("#disqus_thread").after(arg);
+    };
+    $("<script type='text/javascript' src='http://disqus.com/forums/giltcode/embed.js'/>").insertAfter("#disqus_thread");
+  }
+});
 //]]>
 </script>
 </body>

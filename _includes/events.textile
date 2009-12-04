@@ -2,7 +2,7 @@
   <h1>Events:</h1>
   <ul class="events">
     {% for event_category in site.categories %}
-      {% if event_category.first == "event" %}
+      {% if event_category.first == "events" %}
         {% for event in event_category.last %}
           <li><span>{{ event.event_date | date_to_string }}</span><br /> <a href="{{ event.url }}">{{ event.title }}</a></li>
         {% endfor %}

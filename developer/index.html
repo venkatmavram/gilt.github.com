@@ -1,0 +1,17 @@
+---
+layout: default
+title: Developer Bios
+---
+<div id="developer_bios" class="main_content">
+  <h2>Developers:</h2>
+  {% for category in site.categories %}
+    {% if category.first == "developer" %}
+      {% for developer in category.last %}
+        <a href="/developer/{{ developer.author }}">
+          <img src="http://www.gravatar.com/avatar/{{ developer.gravatar_hash }}"/>
+          {{ developer.name }}
+        </a>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</div>

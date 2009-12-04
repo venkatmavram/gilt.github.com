@@ -5,19 +5,19 @@ title: Gilt Code
 
 <div class="main_content">
   <ul class="posts">
-    {% for blog_category in site.categories %}
-      {% if blog_category.first == "blog" %}
-        {% for post in blog_category.last %}
-          {% if forloop.first %}
+    {% assign firstpost = true %}
+    {% for post in site.posts %}
+      {% if post.categories == empty or post.categories contains 'frontpage' %}
+        {% if firstpost %}
+          {% assign firstpost = false %}
             <li id="first_post">
               <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
               {{ post.content | truncatewords: 50 }}
               <br/>
             </li>
-          {% else %}
-            <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-          {% endif %}
-        {% endfor %}
+        {% else %}
+          <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
       {% endif %}
     {% endfor %}
   </ul>

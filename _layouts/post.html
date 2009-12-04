@@ -5,9 +5,10 @@ layout: default
   {% include author.textile %}
   <div class="content">
     {{ content }}
+    {% if page.photos && page.photos != empty %}
+      {% include gallery.textile %}
+    {% endif %}
     <div class="clearfix"></div>
-    <a class="prev_post" href="{{ page.previous.url }}">&laquo; Previous</a>
-    <a class="next_post" href="{{ page.next.url }}">Next &raquo;</a>
   </div>
   <div class="tags">
     tags: {{ page.tags | array_to_sentence_string }}
@@ -16,8 +17,5 @@ layout: default
     <br/>
     {% include related.textile %}
   </div>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript" src="http://disqus.com/forums/giltcode/embed.js"></script>
-  <noscript><a href="http://disqus.com/forums/giltcode/?url=ref">View the discussion thread.</a></noscript>
-  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  {% include comments.textile %}
 </div>

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div id="album" class="main_content">
+  {% include author.textile %}
+  <div class="content">
+    {% include gallery.textile %}
+    <div class="clearfix"></div>
+    <script type="text/javascript">
+      $(function() {
+        $("#photo_gallery h2").text("Thumbnails");
+        $("#photo_gallery img").addClass("thumbnail").click(function() {
+          var big = $("#photo_gallery img:not(img.thumbnail)");
+          if (!big.length) {
+            big = $("<img style='width: 590px;'/>");
+            big.prependTo("#photo_gallery");
+          }
+          big.attr('src', $(this).attr('src'));
+        }).filter(":first").click();
+      });
+    </script>
+    {{ content }}
+  </div>
+  {% include comments.textile %}
+</div>

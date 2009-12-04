@@ -1,10 +1,10 @@
 ---
 author: cconnolly
-categories: blog
 gravatar_hash: 36f0940444ab46d11bae4ce320611ee6
 layout: post
 title: Why code.gilt?
 tags: [testing]
+photos: [http://imgs.xkcd.com/comics/stephen_and_me.png, http://imgs.xkcd.com/comics/spinal_tap_amps.png]
 ---
 
 X
