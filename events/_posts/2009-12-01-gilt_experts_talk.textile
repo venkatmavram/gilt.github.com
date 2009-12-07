@@ -1,9 +1,0 @@
----
-author: cconnolly
-gravatar_hash: 36f0940444ab46d11bae4ce320611ee6
-layout: event
-title: Gilt Experts Talk featuring Chris Wanstrath and Leah Culver
-tags: [gilt experts]
-event_date: 2009-12-02
----
-This is the content of the post

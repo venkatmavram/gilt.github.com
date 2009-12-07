@@ -1,5 +1,5 @@
 <div class="sidebar">
-  <h1>Events:</h1>
+  <h1>Upcoming Events:</h1>
   <ul class="events">
     {% for event_category in site.categories %}
       {% if event_category.first == "events" %}
