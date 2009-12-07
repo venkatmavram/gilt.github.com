@@ -3,6 +3,7 @@ author: kdavis
 gravatar_hash: 1c0ec197cf8845878957200e9e2b1755
 layout: gallery
 title: Test Gallery
+photos_base_url: /gallery/images/
 photos: [IMG_0011.JPG, IMG_0018.JPG, IMG_0102.JPG, IMG_0290.JPG, IMG_0347.JPG, IMG_0355.JPG, IMG_0357.JPG, IMG_0362.JPG, IMG_0435.JPG, IMG_0436.JPG, IMG_0437.JPG, IMG_0438.JPG, IMG_0440.JPG, IMG_0441.JPG, IMG_0443.JPG, IMG_0447.JPG, IMG_8472.JPG, IMG_8540.JPG, IMG_8604.JPG]
 ---
 This is a paragraph below the gallery

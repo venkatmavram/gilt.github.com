@@ -232,7 +232,7 @@ a.album_thumb img {
   margin: 0 10px 10px 0;
   max-width: 590px;
 }
-#album #photo_gallery img.thumbnail {
+#photo_gallery img.thumbnail {
   width: 90px;
   cursor: pointer;
 }
