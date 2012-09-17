@@ -1,24 +1,40 @@
----
-layout: default
-title: Gilt Code
----
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Gilt@GitHub by gilt</title>
 
-<div class="main_content">
-  <ul class="posts">
-    {% assign firstpost = true %}
-    {% for post in site.posts %}
-      {% if post.categories == empty or post.categories contains 'frontpage' %}
-        {% if firstpost %}
-          {% assign firstpost = false %}
-            <li id="first_post">
-              <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-              {{ post.content | truncatewords: 50 }}
-              <br/>
-            </li>
-        {% else %}
-          <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-  </ul>
-</div>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Gilt@GitHub</h1>
+        <p>Gilt ♥ Open Source</p>
+
+
+        <p class="view"><a href="https://github.com/gilt">View My GitHub Profile</a></p>
+
+      </header>
+      <section>
+        <ul>
+<li><a href="http://tech.gilt.com/">Gilt Tech Blog: Gilt Technologie</a></li>
+<li><a href="https://dev.gilt.com/">Gilt Developer Center</a></li>
+<li><a href="https://twitter.com/gilttech">Gilt Tech on Twitter</a></li>
+<li><a href="http://www.gilt.com/careers/tech/category/tech-department/about-tech/">Gilt Tech Careers</a></li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

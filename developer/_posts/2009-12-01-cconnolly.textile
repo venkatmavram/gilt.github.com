@@ -1,9 +1,0 @@
----
-layout: bio
-title: CConnolly @ Gilt
-name: Chris Connolly
-author: cconnolly
-gravatar_hash: 36f0940444ab46d11bae4ce320611ee6
-permalink: /developer/cconnolly
----
-Chris is cool.
