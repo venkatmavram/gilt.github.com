@@ -107,6 +107,11 @@
   text-align: center;
 }
 
+.networkError {
+  color: red;
+  font-weight: bold;
+}
+
 #all-repos {
   max-width: 979px;
   margin: 0 auto;

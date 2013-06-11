@@ -19,6 +19,13 @@ function loadRepos(page) {
       else {
         addRepos(repos);
       }
+    }).fail(function(xhr,textStatus,error) {
+      $("#loading").addClass("networkError").text("An error occurred while communicating with GitHub.");
+      if (xhr.responseJSON && xhr.responseJSON["message"]) {
+        $("<div>").text("(" + xhr.responseJSON["message"] + ")").appendTo($("#loading"));
+      }
+      //getResponseHeader("X-RateLimit-Remaining"
+      //getResponseHeader("X-RateLimit-Limit")
     });
 }
 
