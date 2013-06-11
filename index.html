@@ -3,38 +3,60 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Gilt@GitHub by gilt</title>
+    <title>Gilt ♥ Open Source</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Gilt@GitHub</h1>
-        <p>Gilt ♥ Open Source</p>
-
-
-        <p class="view"><a href="https://github.com/gilt">View My GitHub Profile</a></p>
-
-      </header>
-      <section>
+    <div id="header">
+      <div class="links">
         <ul>
-<li><a href="http://tech.gilt.com/">Gilt Tech Blog: Gilt Technologie</a></li>
-<li><a href="https://dev.gilt.com/">Gilt Developer Center</a></li>
-<li><a href="https://twitter.com/gilttech">Gilt Tech on Twitter</a></li>
-<li><a href="http://www.gilt.com/careers/tech/category/tech-department/about-tech/">Gilt Tech Careers</a></li>
-</ul>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+          <li><a href="http://tech.gilt.com/jobs">Join the Gilt Tech Team</a></li>
+          <li><a href="http://tech.gilt.com/twitter">Follow us on Twitter</a></li>
+          <li><a href="http://tech.gilt.com/api">Use the Public API</a></li>
+          <li><a href="http://tech.gilt.com">Gilt Tech Blog</a></li>
+          <li><a href="http://tech.gilt.com/ux">Gilt UX Blog</a></li>
+          <li><a href="http://gilt.com">Gilt.com</a></li>
+        </ul>
+      </div>
+      <div class="title">
+        <a href="/"><img src="http://static.tumblr.com/1e305e5e1fbe565d3c0f367a88d7e7d0/9qp66tk/gSzmixvae/tumblr_static_gilttech-logo.png" alt="Gilt Tech"/></a>
+        <p class="description">The Gilt Groupe technology organization. We make gilt.com work.
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    <p class="stats">
+      <span id="member-stats" class="hidden"></span>
+      <span id="repo-stats" class="hidden"></span>
+    </p>
+
+    <div id="loading">Loading...</div>
+    <div id="all-repos" class="container-fluid"></div>
+
+    <div id="footer">
+      <div class="links">
+        <ul>
+          <li><a href="http://tech.gilt.com/jobs">Join the Gilt Tech Team</a></li>
+          <li><a href="http://tech.gilt.com/twitter">Follow us on Twitter</a></li>
+          <li><a href="http://tech.gilt.com/api">Use the Public API</a></li>
+          <li><a href="http://tech.gilt.com">Gilt Tech Blog</a></li>
+          <li><a href="http://tech.gilt.com/ux">Gilt UX Blog</a></li>
+          <li><a href="http://gilt.com">Gilt.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="javascripts/jquery-1.10.1.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/main.js"></script>
   </body>
 </html>
