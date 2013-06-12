@@ -112,6 +112,14 @@
   font-weight: bold;
 }
 
+#fallback {
+  text-align: center;
+}
+
+#fallback > a {
+  margin: 10px 0 0;
+}
+
 #all-repos {
   max-width: 979px;
   margin: 0 auto;

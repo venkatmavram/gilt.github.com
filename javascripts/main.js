@@ -24,6 +24,7 @@ function loadRepos(page) {
       if (xhr.responseJSON && xhr.responseJSON["message"]) {
         $("<div>").text("(" + xhr.responseJSON["message"] + ")").appendTo($("#loading"));
       }
+      $("#fallback").removeClass("hidden");
       //getResponseHeader("X-RateLimit-Remaining"
       //getResponseHeader("X-RateLimit-Limit")
     });
